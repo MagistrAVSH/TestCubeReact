@@ -5,6 +5,17 @@
 .App-logo {
   height: 10vmin;
   pointer-events: none;
+  position: absolute;
+  left: 30px;
+  background-color: #111;
+}
+
+.App-logo-2 {
+  height: 10vmin;
+  pointer-events: none;
+  position: absolute;
+  left: 300px;
+  background-color: #111;
 }
 
 @media (prefers-reduced-motion: no-preference) {

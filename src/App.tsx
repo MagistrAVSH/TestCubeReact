@@ -5,7 +5,7 @@ import {Unity, useUnityContext} from "react-unity-webgl";
 
 function App() {
 
-  const { unityProvider, isLoaded, loadingProgression, initialisationError } = useUnityContext({
+  const { unityProvider, isLoaded, loadingProgression} = useUnityContext({
     loaderUrl: "Build/Build.loader.js",
     dataUrl: "Build/Build.data.unityweb",
     frameworkUrl: "Build/Build.framework.js.unityweb",
@@ -16,12 +16,12 @@ function App() {
   // percentage of the Unity Application that has loaded.
   const loadingPercentage = Math.round(loadingProgression * 100);
 
-  console.log(initialisationError)
-
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <img src={logo} className="App-logo" alt="logo"/>
+        <img src={logo} className="App-logo-2" alt="logo"/>
+
         {!isLoaded && (
             // We'll conditionally render the loading overlay if the Unity
             // Application is not loaded.
@@ -29,7 +29,7 @@ function App() {
               <p>Loading... ({loadingPercentage}%)</p>
             </div>
         )}
-        <Unity className="unity" unityProvider={unityProvider} />
+        <Unity className="unity" unityProvider={unityProvider} style={{width: 500, height: 500}}/>
       </header>
     </div>
   );
